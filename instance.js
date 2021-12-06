@@ -9,7 +9,7 @@ c.symbols = [
     },
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 5,
+      currency_capital: 20,
       strategies: [
         {
           strategy: 'dip_catcher',
