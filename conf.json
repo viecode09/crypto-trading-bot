@@ -13,8 +13,8 @@
             "secret": null
         },
         "binance_futures": {
-            "key": null,
-            "secret": null
+            "key": "gDypjPnWsSCdtLJDSTgO179SKqxmS02gXfBFwJF4s0nyIqjKcfVdMxxLFsBnQt3i",
+            "secret": "KQHA8uq36CFSv2T3FGrBKdCoYvTJHBFN1WCiMcvEQLhGOcQW6JaoS733FTjt4nNy"
         },
         "binance_margin": {
             "key": null,
