@@ -20,8 +20,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -44,8 +44,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -68,8 +68,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -92,8 +92,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -116,8 +116,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -140,8 +140,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -150,7 +150,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 100,
+      capital: 1,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -164,8 +164,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -188,8 +188,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -212,8 +212,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -236,8 +236,8 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   },
@@ -260,8 +260,56 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.1,
-        stop_percent: 3.1
+        target_percent: 2.8,
+        stop_percent: 5.1
+      }
+    ]
+  },
+  {
+    symbol: 'AXSUSDT',
+    exchange: 'binance_futures',
+    periods: ['1m', '15m', '1h'],
+    trade: {
+      capital: 20,
+      strategies: [
+        {
+          strategy: 'dip_catcher',
+          interval: '15m',
+          options: {
+            period: '15m'
+          }
+        }
+      ]
+    },
+    watchdogs: [
+      {
+        name: 'risk_reward_ratio',
+        target_percent: 2.8,
+        stop_percent: 5.1
+      }
+    ]
+  },
+  {
+    symbol: 'SOLUSDT',
+    exchange: 'binance_futures',
+    periods: ['1m', '15m', '1h'],
+    trade: {
+      capital: 2,
+      strategies: [
+        {
+          strategy: 'dip_catcher',
+          interval: '15m',
+          options: {
+            period: '15m'
+          }
+        }
+      ]
+    },
+    watchdogs: [
+      {
+        name: 'risk_reward_ratio',
+        target_percent: 2.8,
+        stop_percent: 5.1
       }
     ]
   }
