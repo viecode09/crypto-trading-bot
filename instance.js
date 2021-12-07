@@ -6,7 +6,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 10,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -30,7 +30,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 10,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -54,7 +54,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 10,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -78,7 +78,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 10,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -102,7 +102,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 10,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -126,7 +126,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      currency_capital: 20,
+      balance_percent: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
