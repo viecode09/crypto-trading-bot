@@ -270,7 +270,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['1m', '15m', '1h'],
     trade: {
-      capital: 20,
+      capital: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
