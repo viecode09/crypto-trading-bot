@@ -204,12 +204,12 @@ module.exports = class ExchangeOrderWatchdogListener {
         );
 
         try {
-//          await exchange.updateOrder(
-//            orderChange.id,
-//            Order.createUpdateOrder(
-//              orderChange.target.id,
-//              orderChange.target.price || undefined,
-//              orderChange.target.amount || undefined
+          await exchange.updateOrder(
+            orderChange.id,
+            Order.createUpdateOrder(
+              orderChange.target.id,
+              orderChange.target.price || undefined,
+              orderChange.target.amount || undefined
             )
           );
         } catch (e) {
