@@ -21,7 +21,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 4.0,
-        stop_percent: 4.0
+        stop_percent: 8.0
       }
     ]
   },
@@ -45,7 +45,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 4.0,
-        stop_percent: 4.0
+        stop_percent: 8.0
       }
     ]
   },
@@ -69,7 +69,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 4.0,
-        stop_percent: 4.0
+        stop_percent: 8.0
       }
     ]
   }
