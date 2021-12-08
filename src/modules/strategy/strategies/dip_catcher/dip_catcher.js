@@ -62,7 +62,7 @@ module.exports = class DipCatcher {
 
         emptySignal.setSignal('long');
       } else if (lastSignal) {
-        emptySignal.setSignal('close');
+        //emptySignal.setSignal('close');
       }
     }
 
@@ -72,7 +72,7 @@ module.exports = class DipCatcher {
 
         emptySignal.setSignal('short');
       } else if (lastSignal) {
-        emptySignal.setSignal('close');
+        //emptySignal.setSignal('close');
       }
     }
 
@@ -122,10 +122,10 @@ module.exports = class DipCatcher {
     return {
       period: '15m',
       trend_cloud_multiplier: 4,
-      hma_high_period: 9,
-      hma_high_candle_source: 'close',
-      hma_low_period: 9,
-      hma_low_candle_source: 'close'
+      hma_high_period: 12,
+      hma_high_candle_source: 'high',
+      hma_low_period: 12,
+      hma_low_candle_source: 'low'
     };
   }
 };
