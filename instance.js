@@ -292,7 +292,7 @@ c.symbols = [
   {
     symbol: 'SOLUSDT',
     exchange: 'binance_futures',
-    periods: ['5m', '15m', '1hm'],
+    periods: ['5m', '15m', '1h'],
     trade: {
       capital: 2,
       strategies: [
