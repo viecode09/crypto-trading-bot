@@ -24,9 +24,13 @@ module.exports = class RiskRewardRatioCalculator {
     if (position.side === 'long') {
       result.target = entryPrice * (1 + options.target_percent / 100);
       result.stop = entryPrice * (1 - options.stop_percent / 100);
+      result.target1 = entryPrice * (1 + options.target_percent / 2 / 100);
+      result.stop1 = entryPrice * (1 - options.stop_percent / 2 / 100);
     } else {
       result.target = entryPrice * (1 - options.target_percent / 100);
       result.stop = entryPrice * (1 + options.stop_percent / 100);
+      result.target1 = entryPrice * (1 - options.target_percent / 2 / 100);
+      result.stop1 = entryPrice * (1 + options.stop_percent / 2 / 100);
     }
 
     return result;
@@ -43,10 +47,14 @@ module.exports = class RiskRewardRatioCalculator {
         amount: Math.abs(position.amount),
         price: riskRewardRatio.stop
       };
-
+      newOrders.stop1= {
+        amount: Math.abs(position.amount) / 2,
+        price: riskRewardRatio.stop1
+      };
       // inverse price for lose long position via sell
       if (position.side === 'long') {
         newOrders.stop.price = newOrders.stop.price * -1;
+        newOrders.stop1.price = newOrders.stop1.price * -1;
       }
     } else {
       // update order
@@ -63,6 +71,10 @@ module.exports = class RiskRewardRatioCalculator {
           id: stopOrder.id,
           amount: amount
         };
+        newOrders.stop1 = {
+          id: stopOrder.id,
+          amount: amount / 2
+        };
       }
     }
 
@@ -72,10 +84,14 @@ module.exports = class RiskRewardRatioCalculator {
         amount: Math.abs(position.amount),
         price: riskRewardRatio.target
       };
-
+      newOrders.target1 = {
+        amount: Math.abs(position.amount) / 2,
+        price: riskRewardRatio.target1
+      };
       // inverse price for lose long position via sell
       if (position.side === 'long') {
         newOrders.target.price = newOrders.target.price * -1;
+        newOrders.target1.price = newOrders.target1.price * -1;
       }
     } else {
       // update order
@@ -91,6 +107,10 @@ module.exports = class RiskRewardRatioCalculator {
         newOrders.target = {
           id: targetOrder.id,
           amount: amount
+        };
+        newOrders.target1 = {
+          id: targetOrder.id,
+          amount: amount / 2
         };
       }
     }
@@ -129,6 +149,37 @@ module.exports = class RiskRewardRatioCalculator {
         newOrders.push({
           price: ratioOrders.stop.price,
           amount: ratioOrders.stop.amount,
+          type: 'stop'
+        });
+      }
+    }
+    if (ratioOrders.target1) {
+      if (ratioOrders.target1.id) {
+        newOrders.push({
+          id: ratioOrders.target1.id,
+          price: ratioOrders.target1.price,
+          amount: ratioOrders.target1.amount
+        });
+      } else {
+        newOrders.push({
+          price: ratioOrders.target1.price || undefined,
+          amount: ratioOrders.target1.amount || undefined,
+          type: 'target'
+        });
+      }
+    }
+
+    if (ratioOrders.stop1) {
+      if (ratioOrders.stop1.id) {
+        newOrders.push({
+          id: ratioOrders.stop1.id,
+          price: ratioOrders.stop1.price,
+          amount: ratioOrders.stop1.amount
+        });
+      } else {
+        newOrders.push({
+          price: ratioOrders.stop1.price,
+          amount: ratioOrders.stop1.amount,
           type: 'stop'
         });
       }
