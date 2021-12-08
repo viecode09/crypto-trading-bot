@@ -4,15 +4,15 @@ c.symbols = [
   {
     symbol: 'SANDUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -20,7 +20,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.5,
         stop_percent: 5.1
       }
     ]
@@ -28,15 +28,15 @@ c.symbols = [
   {
     symbol: 'MANAUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -44,7 +44,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.5,
         stop_percent: 5.1
       }
     ]
@@ -52,15 +52,15 @@ c.symbols = [
   {
     symbol: 'ADAUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -68,7 +68,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.5,
         stop_percent: 5.1
       }
     ]
@@ -76,15 +76,15 @@ c.symbols = [
   {
     symbol: 'XLMUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -92,7 +92,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.5,
         stop_percent: 5.1
       }
     ]
@@ -100,15 +100,15 @@ c.symbols = [
   {
     symbol: 'GALAUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -116,7 +116,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.5,
         stop_percent: 5.1
       }
     ]
@@ -124,15 +124,15 @@ c.symbols = [
   {
     symbol: 'DOTUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -140,7 +140,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 4.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -148,15 +148,15 @@ c.symbols = [
   {
     symbol: 'BNBUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 1,
+      capital: 4,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -164,7 +164,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 5.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -172,15 +172,15 @@ c.symbols = [
   {
     symbol: 'MATICUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -188,7 +188,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -196,15 +196,15 @@ c.symbols = [
   {
     symbol: 'ALICEUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -212,7 +212,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -220,15 +220,15 @@ c.symbols = [
   {
     symbol: 'DYDXUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -236,7 +236,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -244,15 +244,15 @@ c.symbols = [
   {
     symbol: 'SUSHIUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -260,7 +260,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -268,15 +268,15 @@ c.symbols = [
   {
     symbol: 'AXSUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 2,
+      capital: 4,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -284,7 +284,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 4.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
@@ -292,15 +292,15 @@ c.symbols = [
   {
     symbol: 'SOLUSDT',
     exchange: 'binance_futures',
-    periods: ['1m', '15m', '1h'],
+    periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 2,
+      capital: 4,
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -308,7 +308,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 4.8,
+        target_percent: 2.8,
         stop_percent: 5.1
       }
     ]
