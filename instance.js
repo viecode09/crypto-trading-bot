@@ -20,7 +20,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.5,
         stop_percent: 8.0
       }
     ]
@@ -30,7 +30,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      currency_capital: 300,
+      currency_capital: 200,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -44,7 +44,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 2.0,
+        target_percent: 2.5,
         stop_percent: 8.0
       }
     ]
@@ -92,7 +92,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.5,
         stop_percent: 8.0
       }
     ]
@@ -150,7 +150,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      capital: 1,
+      capital: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -192,7 +192,7 @@ c.symbols = [
         stop_percent: 8.0
       }
     ]
-  },
+
   {
     symbol: 'ALICEUSDT',
     exchange: 'binance_futures',
@@ -212,7 +212,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.0,
         stop_percent: 8.0
       }
     ]
@@ -260,7 +260,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.0,
         stop_percent: 8.0
       }
     ]
@@ -284,7 +284,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.0,
         stop_percent: 8.0
       }
     ]
@@ -308,7 +308,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 3.0,
+        target_percent: 2.0,
         stop_percent: 8.0
       }
     ]
