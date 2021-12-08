@@ -192,7 +192,7 @@ c.symbols = [
         stop_percent: 8.0
       }
     ]
-
+  },
   {
     symbol: 'ALICEUSDT',
     exchange: 'binance_futures',
