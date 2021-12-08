@@ -62,7 +62,7 @@ module.exports = class DipCatcher {
 
         emptySignal.setSignal('long');
       } else if (lastSignal) {
-        emptySignal.setSignal('close');
+        //emptySignal.setSignal('close');
       }
     }
 

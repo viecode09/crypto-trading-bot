@@ -56,7 +56,7 @@ module.exports = class RiskRewardRatioCalculator {
       if (OrderUtil.isPercentDifferentGreaterThen(position.amount, stopOrder.amount, 1)) {
         let amount = Math.abs(position.amount);
         if (position.isLong()) {
-          amount *= -1;
+          amount *= 1;
         }
 
         newOrders.stop = {
@@ -85,7 +85,7 @@ module.exports = class RiskRewardRatioCalculator {
       if (OrderUtil.isPercentDifferentGreaterThen(position.amount, targetOrder.amount, 1)) {
         let amount = Math.abs(position.amount);
         if (position.isLong()) {
-          amount *= -1;
+          amount *= 1;
         }
 
         newOrders.target = {
