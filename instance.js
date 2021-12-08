@@ -150,7 +150,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 4,
+      capital: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -270,7 +270,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 4,
+      capital: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -294,7 +294,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['3m', '5m', '15m'],
     trade: {
-      capital: 4,
+      capital: 2,
       strategies: [
         {
           strategy: 'dip_catcher',
