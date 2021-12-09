@@ -10,9 +10,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -34,9 +34,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -58,9 +58,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -82,9 +82,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -106,9 +106,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -130,9 +130,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -154,9 +154,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -178,9 +178,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -202,9 +202,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -226,9 +226,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -250,9 +250,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -274,9 +274,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
@@ -298,9 +298,9 @@ c.symbols = [
       strategies: [
         {
           strategy: 'dip_catcher',
-          interval: '15m',
+          interval: '5m',
           options: {
-            period: '15m'
+            period: '5m'
           }
         }
       ]
