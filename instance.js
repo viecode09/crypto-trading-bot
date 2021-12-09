@@ -6,7 +6,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 300,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -20,7 +20,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 5.0,
+        target_percent: 1.5,
         stop_percent: 10.0
       }
     ]
@@ -30,7 +30,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 300,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -44,7 +44,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 5.0,
+        target_percent: 1.5,
         stop_percent: 10.0
       }
     ]
@@ -174,7 +174,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 300,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -188,7 +188,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 5.0,
+        target_percent: 1.5,
         stop_percent: 10.0
       }
     ]
@@ -198,7 +198,7 @@ c.symbols = [
     exchange: 'binance_futures',
     periods: ['5m', '15m', '1h'],
     trade: {
-      currency_capital: 100,
+      currency_capital: 300,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -212,7 +212,7 @@ c.symbols = [
     watchdogs: [
       {
         name: 'risk_reward_ratio',
-        target_percent: 5.0,
+        target_percent: 1.5,
         stop_percent: 10.0
       }
     ]
