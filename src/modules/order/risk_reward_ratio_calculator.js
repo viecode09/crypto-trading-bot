@@ -24,9 +24,14 @@ module.exports = class RiskRewardRatioCalculator {
     if (position.side === 'long') {
       result.target = entryPrice * (1 + options.target_percent / 100);
       result.stop = entryPrice * (1 - options.stop_percent / 100);
+      result.stop1 = entryPrice * (1 - (3 / 100));
+      result.stop2 = entryPrice * (1 - (5 / 100));
     } else {
       result.target = entryPrice * (1 - options.target_percent / 100);
       result.stop = entryPrice * (1 + options.stop_percent / 100);
+      result.stop1 = entryPrice * (1 + (3 / 100));
+      result.stop2 = entryPrice * (1 + (5 / 100));
+
     }
 
     return result;
@@ -42,6 +47,15 @@ module.exports = class RiskRewardRatioCalculator {
       newOrders.stop = {
         amount: Math.abs(position.amount),
         price: riskRewardRatio.stop
+      };
+      newOrders.stop1 = {
+        amount: Math.abs(position.amount) * 0.5,
+        price: riskRewardRatio.stop1
+      };
+
+      newOrders.stop2 = {
+        amount: Math.abs(position.amount) * 0.75,
+        price: riskRewardRatio.stop2
       };
 
       // inverse price for lose long position via sell
@@ -63,6 +77,17 @@ module.exports = class RiskRewardRatioCalculator {
           id: stopOrder.id,
           amount: amount
         };
+
+        newOrders.stop1 = {
+          amount: amount * 0.5,
+          price: riskRewardRatio.stop1
+        };
+
+        newOrders.stop2 = {
+          amount: amount * 0.75,
+          price: riskRewardRatio.stop2
+        };
+
       }
     }
 
@@ -72,7 +97,6 @@ module.exports = class RiskRewardRatioCalculator {
         amount: Math.abs(position.amount),
         price: riskRewardRatio.target
       };
-
       // inverse price for lose long position via sell
       if (position.side === 'long') {
         newOrders.target.price = newOrders.target.price * -1;
@@ -129,6 +153,38 @@ module.exports = class RiskRewardRatioCalculator {
         newOrders.push({
           price: ratioOrders.stop.price,
           amount: ratioOrders.stop.amount,
+          type: 'stop'
+        });
+      }
+    }
+
+    if (ratioOrders.stop1) {
+      if (ratioOrders.stop1.id) {
+        newOrders.push({
+          id: ratioOrders.stop1.id,
+          price: ratioOrders.stop1.price,
+          amount: ratioOrders.stop1.amount
+        });
+      } else {
+        newOrders.push({
+          price: ratioOrders.stop1.price,
+          amount: ratioOrders.stop1.amount,
+          type: 'stop'
+        });
+      }
+    }
+
+    if (ratioOrders.stop2) {
+      if (ratioOrders.stop2.id) {
+        newOrders.push({
+          id: ratioOrders.stop2.id,
+          price: ratioOrders.stop2.price,
+          amount: ratioOrders.stop2.amount
+        });
+      } else {
+        newOrders.push({
+          price: ratioOrders.stop2.price,
+          amount: ratioOrders.stop2.amount,
           type: 'stop'
         });
       }
