@@ -61,6 +61,8 @@ module.exports = class RiskRewardRatioCalculator {
       // inverse price for lose long position via sell
       if (position.side === 'long') {
         newOrders.stop.price = newOrders.stop.price * -1;
+        newOrders.stop1.price = newOrders.stop1.price * -1;
+        newOrders.stop2.price = newOrders.stop2.price * -1;
       }
     } else {
       // update order
