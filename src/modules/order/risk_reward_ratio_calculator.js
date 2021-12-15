@@ -25,12 +25,12 @@ module.exports = class RiskRewardRatioCalculator {
       result.target = entryPrice * (1 + options.target_percent / 100);
       result.stop = entryPrice * (1 - options.stop_percent / 100);
       result.stop1 = entryPrice * (1 - (8 / 100));
-      result.stop2 = entryPrice * (1 - (6 / 100));
+      result.stop2 = entryPrice * (1 - (9 / 100));
     } else {
       result.target = entryPrice * (1 - options.target_percent / 100);
       result.stop = entryPrice * (1 + options.stop_percent / 100);
       result.stop1 = entryPrice * (1 + (8 / 100));
-      result.stop2 = entryPrice * (1 + (6 / 100));
+      result.stop2 = entryPrice * (1 + (9 / 100));
 
     }
 
