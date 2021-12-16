@@ -9,7 +9,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -33,7 +33,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -57,7 +57,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -81,7 +81,7 @@ c.symbols = [
       capital: 4,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -105,7 +105,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -129,7 +129,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -153,7 +153,7 @@ c.symbols = [
       capital: 4,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -177,7 +177,7 @@ c.symbols = [
       capital: 4,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -201,7 +201,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
@@ -225,7 +225,7 @@ c.symbols = [
       currency_capital: 500,
       strategies: [
         {
-          strategy: 'dip_catcher',
+          strategy: 'cci_macd',
           interval: '15m',
           options: {
             period: '15m'
