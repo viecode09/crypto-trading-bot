@@ -21,7 +21,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -45,7 +45,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -69,7 +69,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -93,7 +93,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -117,7 +117,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -141,7 +141,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -165,7 +165,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -189,7 +189,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -213,7 +213,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -237,7 +237,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -261,7 +261,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -285,7 +285,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -309,7 +309,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -333,7 +333,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -357,7 +357,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -381,7 +381,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   },
@@ -405,7 +405,7 @@ c.symbols = [
       {
         name: 'risk_reward_ratio',
         target_percent: 3.0,
-        stop_percent: 10.0
+        stop_percent: 5.0
       }
     ]
   }

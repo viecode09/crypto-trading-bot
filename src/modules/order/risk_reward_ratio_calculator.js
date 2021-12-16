@@ -24,13 +24,13 @@ module.exports = class RiskRewardRatioCalculator {
     if (position.side === 'long') {
       result.target = entryPrice * (1 + options.target_percent / 100);
       result.stop = entryPrice * (1 - options.stop_percent / 100);
-      result.stop1 = entryPrice * (1 - (8 / 100));
-      result.stop2 = entryPrice * (1 - (9 / 100));
+      result.stop1 = entryPrice * (1 - (3 / 100));
+      result.stop2 = entryPrice * (1 - (4 / 100));
     } else {
       result.target = entryPrice * (1 - options.target_percent / 100);
       result.stop = entryPrice * (1 + options.stop_percent / 100);
-      result.stop1 = entryPrice * (1 + (8 / 100));
-      result.stop2 = entryPrice * (1 + (9 / 100));
+      result.stop1 = entryPrice * (1 + (3 / 100));
+      result.stop2 = entryPrice * (1 + (4 / 100));
 
     }
 
