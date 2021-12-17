@@ -24,13 +24,9 @@ module.exports = class RiskRewardRatioCalculator {
     if (position.side === 'long') {
       result.target = entryPrice * (1 + options.target_percent / 100);
       result.stop = entryPrice * (1 - options.stop_percent / 100);
-      result.stop1 = entryPrice * (1 - (3 / 100));
-      result.stop2 = entryPrice * (1 - (4 / 100));
     } else {
       result.target = entryPrice * (1 - options.target_percent / 100);
       result.stop = entryPrice * (1 + options.stop_percent / 100);
-      result.stop1 = entryPrice * (1 + (3 / 100));
-      result.stop2 = entryPrice * (1 + (4 / 100));
 
     }
 
@@ -61,8 +57,6 @@ module.exports = class RiskRewardRatioCalculator {
       // inverse price for lose long position via sell
       if (position.side === 'long') {
         newOrders.stop.price = newOrders.stop.price * -1;
-        newOrders.stop1.price = newOrders.stop1.price * -1;
-        newOrders.stop2.price = newOrders.stop2.price * -1;
       }
     } else {
       // update order
@@ -74,21 +68,6 @@ module.exports = class RiskRewardRatioCalculator {
         if (position.isLong()) {
           amount *= 1;
         }
-
-        newOrders.stop = {
-          id: stopOrder.id,
-          amount: amount
-        };
-
-        newOrders.stop1 = {
-          amount: amount * 0.5,
-          price: riskRewardRatio.stop1
-        };
-
-        newOrders.stop2 = {
-          amount: amount * 0.75,
-          price: riskRewardRatio.stop2
-        };
 
       }
     }
@@ -160,38 +139,6 @@ module.exports = class RiskRewardRatioCalculator {
       }
     }
 
-    if (ratioOrders.stop1) {
-      if (ratioOrders.stop1.id) {
-        newOrders.push({
-          id: ratioOrders.stop1.id,
-          price: ratioOrders.stop1.price,
-          amount: ratioOrders.stop1.amount
-        });
-      } else {
-        newOrders.push({
-          price: ratioOrders.stop1.price,
-          amount: ratioOrders.stop1.amount,
-          type: 'stop'
-        });
-      }
-    }
-
-    if (ratioOrders.stop2) {
-      if (ratioOrders.stop2.id) {
-        newOrders.push({
-          id: ratioOrders.stop2.id,
-          price: ratioOrders.stop2.price,
-          amount: ratioOrders.stop2.amount
-        });
-      } else {
-        newOrders.push({
-          price: ratioOrders.stop2.price,
-          amount: ratioOrders.stop2.amount,
-          type: 'stop'
-        });
-      }
-    }
-
-    return newOrders;
+   return newOrders;
   }
 };
