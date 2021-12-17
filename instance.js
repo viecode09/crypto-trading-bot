@@ -146,11 +146,11 @@ c.symbols = [
     ]
   },
   {
-    symbol: 'BNBUSDT',
+    symbol: 'CHRUSDT',
     exchange: 'binance_futures',
     periods: ['3m', '15m', '1h'],
     trade: {
-      capital: 2,
+      currency_capital: 400,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -266,11 +266,11 @@ c.symbols = [
     ]
   },
   {
-    symbol: 'AXSUSDT',
+    symbol: 'CELRUSDT',
     exchange: 'binance_futures',
     periods: ['3m', '15m', '1h'],
     trade: {
-      capital: 2,
+      currency_capital: 400,
       strategies: [
         {
           strategy: 'dip_catcher',
@@ -290,11 +290,11 @@ c.symbols = [
     ]
   },
   {
-    symbol: 'SOLUSDT',
+    symbol: 'ARPAUSDT',
     exchange: 'binance_futures',
     periods: ['3m', '15m', '1h'],
     trade: {
-      capital: 2,
+      currency_capital: 400,
       strategies: [
         {
           strategy: 'dip_catcher',
