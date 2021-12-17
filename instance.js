@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'SANDUSDT', 'MANAUSDT', 'ADABTC', 'XLMUSDT', 'CHRUSDT', 'MATICUSDT', 'STORJUSDT', 'IOTX', 'ARPAUSDT'
+    'BTCUSDT', 'ETHUSDT', 'BNBBTC', 'ADAUSDT', 'XRPUSDT', 'DOTUSDT', 'DOGEUSDT', 'SANDUSDT', 'MATICUSDT', 'MANAUSDT', 'SUSHIUSDT'
 ]
 
 z.forEach((pair) => {
@@ -35,7 +35,7 @@ z.forEach((pair) => {
             {
                 'name': 'risk_reward_ratio',
                 'target_percent': 3.1,
-                'stop_percent': 2.0
+                'stop_percent': 4.0
             }
         ]
     })
