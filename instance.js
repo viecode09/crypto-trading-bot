@@ -12,7 +12,7 @@ z.forEach((pair) => {
         'periods': ['15m', '30m', '1h'],
         'exchange': 'binance_futures',
         'trade': {
-            'currency_capital': 400,
+            'currency_capital': 200,
             'strategies': [
                 {
                     'strategy': 'cci',
@@ -35,7 +35,7 @@ z.forEach((pair) => {
             {
                 'name': 'risk_reward_ratio',
                 'target_percent': 1.1,
-                'stop_percent': 2.0
+                'stop_percent': 3.1
             }
         ]
     })
