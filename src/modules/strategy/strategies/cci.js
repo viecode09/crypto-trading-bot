@@ -62,7 +62,7 @@ module.exports = class CCI {
       (lastSignal === 'long' && before > 100 && last < 100) ||
       (lastSignal === 'short' && before < -100 && last > -100)
     ) {
-      return SignalResult.createSignal('close', debug);
+      return true //SignalResult.createSignal('close', debug);
     }
 
     let long = price >= sma200.slice(-1)[0];

@@ -51,7 +51,7 @@ module.exports = class Macd {
 
     // trend change
     if ((lastSignal === 'long' && before > 0 && current < 0) || (lastSignal === 'short' && before < 0 && current > 0)) {
-      return SignalResult.createSignal('close', debug);
+      return true //SignalResult.createSignal('close', debug);
     }
 
     if (long) {
