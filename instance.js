@@ -3,30 +3,22 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'SUSHIUSDT', 'COTIUSDT', 'ADAUSDT', 'SANDBOX'
+    'MATICUSDT', 'NEARUSDT', 'XLMUSDT', 'ADAUSDT', 'SANDBOX'
 ]
 
 z.forEach((pair) => {
     c.symbols.push({
         'symbol': pair,
-        'periods': ['5m', '15m', '1h'],
+        'periods': ['15m', '1h', '4h'],
         'exchange': 'binance_futures',
         'trade': {
-            'currency_capital': 200,
+            'currency_capital': 100,
             'strategies': [
-                {
-                    'strategy': 'cci',
+               {
+                    'strategy': 'di_catcher',
+                    'interval': '15m',
                     'options': {
                         'period': '15m'
-                    }
-                },
-                {
-                    'strategy': 'obv_pump_dump'
-                },
-                {
-                    'strategy': 'macd',
-                    'options': {
-                        'period': '1h'
                     }
                 }
             ]
