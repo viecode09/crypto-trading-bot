@@ -26,8 +26,8 @@ z.forEach((pair) => {
         'watchdogs': [
         {
             'name': 'risk_reward_ratio',
-            'target_percent': 3.1,
-            'stop_percent': 5.1
+            'target_percent': 2.1,
+            'stop_percent': 3.0
         }
         ]
     })
