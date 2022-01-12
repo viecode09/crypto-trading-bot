@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'XLMUSDT', 'ADAUSDT', 'SANDBOX'
+    'MATICUSDT', 'NEARUSDT', 'XLMUSDT', 'ADAUSDT', 'SANDUSDT'
 ]
 
 z.forEach((pair) => {
@@ -15,7 +15,7 @@ z.forEach((pair) => {
             'currency_capital': 100,
             'strategies': [
                {
-                    'strategy': 'di_catcher',
+                    'strategy': 'dip_catcher',
                     'interval': '15m',
                     'options': {
                         'period': '15m'
