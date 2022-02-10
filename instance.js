@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'GALAUSDT', 'ADAUSDT', 'SANDUSDT'
+    'MATICUSDT', 'NEARUSDT', 'GALAUSDT', 'ADAUSDT', 'SANDUSDT', "BNBUSDT", "BTCUSDT", "ETHUSDT", "DOTUSDT", "SUSHIUSDT"
 ]
 
 z.forEach((pair) => {
@@ -18,7 +18,7 @@ z.forEach((pair) => {
                 'strategy': 'dip_catcher',
                 'interval': '3m',
                 'options': {
-                  'period': '5m'
+                  'period': '15m'
                 }
               }
             ]
