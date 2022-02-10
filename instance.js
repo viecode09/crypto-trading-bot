@@ -14,23 +14,12 @@ z.forEach((pair) => {
         'trade': {
             'currency_capital': 200,
             'strategies': [
-                {
-                  'strategy': 'cci',
-                  'interval': '5m',
-                  'options': {
-                      'period': '5m'
-                  }
-              },
               {
-                  'strategy': 'obv_pump_dump',
-                  'interval': '30m',
-              },
-              {
-                  'strategy': 'macd',
-                  'interval': '10m',
-                  'options': {
-                      'period': '15m'
-                  }
+                'strategy': 'dip_catcher',
+                'interval': '3m',
+                'options': {
+                  'period': '5m'
+                }
               }
             ]
         },
