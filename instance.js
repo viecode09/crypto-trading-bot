@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'GALAUSDT', 'ADAUSDT', 'SANDUSDT', "BNBUSDT", "BTCUSDT", "ETHUSDT", "DOTUSDT", "SUSHIUSDT"
+    'MATICUSDT', 'NEARUSDT', 'GALAUSDT', 'ADAUSDT', 'SANDUSDT'
 ]
 
 z.forEach((pair) => {
@@ -12,7 +12,7 @@ z.forEach((pair) => {
         'periods': ['5m', '15m', '1h'],
         'exchange': 'binance_futures',
         'trade': {
-            'currency_capital': 200,
+            'currency_capital': 400,
             'strategies': [
               {
                 'strategy': 'dca_dipper',
@@ -26,8 +26,8 @@ z.forEach((pair) => {
         'watchdogs': [
         {
             'name': 'risk_reward_ratio',
-            'target_percent': 1.0,
-            'stop_percent': 3.0
+            'target_percent': 0.8,
+            'stop_percent': 1.0
         }
         ]
     })
