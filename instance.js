@@ -9,14 +9,14 @@ let z = [
 z.forEach((pair) => {
     c.symbols.push({
         'symbol': pair,
-        'periods': ['5m', '15m', '1h'],
+        'periods': ['15m', '1h', '1d'],
         'exchange': 'binance_futures',
         'trade': {
             'currency_capital': 200,
             'strategies': [
               {
-                'strategy': 'obv_pump_dump',
-                'interval': '5m',
+                'strategy': 'dip_catcher',
+                'interval': '15m',
                 'options': {
                   'period': '15m'
                 }
