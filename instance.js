@@ -12,7 +12,7 @@ z.forEach((pair) => {
         'periods': ['5m', '15m', '1h'],
         'exchange': 'binance_futures',
         'trade': {
-            'currency_capital': 400,
+            'currency_capital': 200,
             'strategies': [
               {
                 'strategy': 'obv_pump_dump',
