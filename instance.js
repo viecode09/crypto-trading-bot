@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'GALAUSDT', 'BNBUSDT', 'SANDUSDT', "SOLUSDT", "AXSUSDT", "LUNA"
+    'MATICUSDT', 'NEARUSDT', 'SANDUSDT', "SOLUSDT", "AXSUSDT", "LUNA"
 ]
 
 z.forEach((pair) => {
