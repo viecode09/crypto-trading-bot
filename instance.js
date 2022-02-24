@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'SANDUSDT', "SOLUSDT", "AXSUSDT", "LUNA"
+    'MATICUSDT', 'NEARUSDT', 'SANDUSDT', "SOLUSDT", "AXSUSDT", "LUNAUSDT"
 ]
 
 z.forEach((pair) => {
@@ -15,8 +15,8 @@ z.forEach((pair) => {
             'currency_capital': 200,
             'strategies': [
               {
-                'strategy': 'trader',
-                'interval': '3m',
+                'strategy': 'dip_catcher',
+                'interval': '5m',
                 'options': {
                   'period': '15m'
                 }
@@ -26,8 +26,8 @@ z.forEach((pair) => {
         'watchdogs': [
         {
             'name': 'risk_reward_ratio',
-            'target_percent': 1.8,
-            'stop_percent': 0.8
+            'target_percent': 5.0,
+            'stop_percent': 5.0
         }
         ]
     })
