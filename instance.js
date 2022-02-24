@@ -15,7 +15,7 @@ z.forEach((pair) => {
             'currency_capital': 200,
             'strategies': [
               {
-                'strategy': 'dip_catcher',
+                'strategy': 'obv_pump_dump',
                 'interval': '5m',
                 'options': {
                   'period': '15m'
@@ -27,7 +27,7 @@ z.forEach((pair) => {
         {
             'name': 'risk_reward_ratio',
             'target_percent': 5.0,
-            'stop_percent': 1.0
+            'stop_percent': 2.0
         }
         ]
     })
