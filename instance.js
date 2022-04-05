@@ -15,7 +15,7 @@ z.forEach((pair) => {
             'currency_capital': 200,
             'strategies': [
               {
-                'strategy': 'dca_dipper',
+                'strategy': 'dip_catcher',
                 'interval': '10m',
                 'options': {
                   'period': '15m'
