@@ -3,7 +3,7 @@ const c = (module.exports = {});
 c.symbols = []
 
 let z = [
-    'MATICUSDT', 'NEARUSDT', 'SANDUSDT', "SOLUSDT", "AXSUSDT","GALAUSDT", "ALICEUSDT", "ADAUSDT"
+    'MATICUSDT', 'NEARUSDT', 'SANDUSDT', "ALICEUSDT", "ADAUSDT", "BTCUSDT", "ETHUSDT", "BNBUSDT"
 ]
 
 z.forEach((pair) => {
@@ -12,13 +12,13 @@ z.forEach((pair) => {
         'periods': ['15m', '1h', '4h'],
         'exchange': 'binance_futures',
         'trade': {
-            'currency_capital': 80,
+            'currency_capital': 40,
             'strategies': [
               {
                 'strategy': 'dip_catcher',
-                'interval': '10m',
+                'interval': '5m',
                 'options': {
-                  'period': '15m'
+                  'period': '1m'
                 }
               }
             ]
