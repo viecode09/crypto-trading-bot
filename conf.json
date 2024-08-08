@@ -13,8 +13,8 @@
             "secret": null
         },
         "binance_futures": {
-            "key": "gDypjPnWsSCdtLJDSTgO179SKqxmS02gXfBFwJF4s0nyIqjKcfVdMxxLFsBnQt3i",
-            "secret": "KQHA8uq36CFSv2T3FGrBKdCoYvTJHBFN1WCiMcvEQLhGOcQW6JaoS733FTjt4nNy"
+            "key": "dEzRvIDTh2NQH9NmoxdLTjALhwioqKCz7ivBv2A1iXkIR9iXEnngEf9IWZkjOYcw",
+            "secret": "1xo1lvgKtX0r2vSEHEgssUq8svp1y7aBI2B6NHUv6GRRrZzoJq4fonIgzfnyGu9M"
         },
         "binance_margin": {
             "key": null,
@@ -85,28 +85,22 @@
           "height":400,
           "pairs":[
             {
-              "symbol":"bitmex:XBTUSD"
+              "symbol":"binance:GALAUSDT"
             },
             {
-              "symbol":"bitmex:ETHUSD"
+              "symbol":"binance:OPUSDT"
             },
             {
-              "symbol":"binance:LTCUSDT"
+              "symbol":"binance:NEARUSDT"
             },
             {
-              "symbol":"binance:EOSUSDT"
+              "symbol":"binance:SOLUSDT"
             },
             {
-              "symbol":"binance:XRPUSDT"
+              "symbol":"binance:BTCUSDT"
             },
             {
-              "symbol":"binance:NEOUSDT"
-            },
-            {
-              "symbol":"binance:BCHUSDT"
-            },
-            {
-              "symbol":"binance:ETCUSDT"
+              "symbol":"binance:ETHUSDT"
             },
             {
               "symbol":"binance:ADAUSDT"
