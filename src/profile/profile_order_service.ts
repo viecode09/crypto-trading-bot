@@ -191,6 +191,15 @@ export async function fetchOpenOrders(
       }
     }
   } else {
+    if (!pair) {
+      // Some exchanges (e.g. binance) throw when fetching all open orders without a
+      // symbol unless the stricter-rate-limit warning is explicitly acknowledged.
+      exchange.options['fetchOpenOrders'] = {
+        ...(exchange.options['fetchOpenOrders'] || {}),
+        warnWithoutSymbol: false
+      };
+      exchange.options['warnOnFetchOpenOrdersWithoutSymbol'] = false;
+    }
     orders = await exchange.fetchOpenOrders(pair);
   }
 
