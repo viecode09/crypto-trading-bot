@@ -112,7 +112,6 @@ export { ExchangeInstanceService } from './system/exchange_instance_service';
 export { BinancePriceService } from '../utils/binance_price_service';
 
 let db: Sqlite.Database | undefined;
-let config: Config;
 let ta: Ta;
 let eventEmitter: events.EventEmitter;
 let logger: Logger;
@@ -451,8 +450,8 @@ const services: Services = {
     return new Telegraf(token);
   },
 
-  getConfig: (): Config => {
-    return config;
+  getConfig: function (): Config {
+    return this.getSystemUtil().getBotSettings() as Config;
   },
 
   // Controller factory methods
