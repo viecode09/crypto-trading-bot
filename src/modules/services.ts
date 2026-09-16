@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 import events from 'events';
 
@@ -57,7 +56,12 @@ import { CcxtExchangesController } from '../controller';
 import { DashboardSettingsController } from '../controller';
 import { ProfileController } from '../controller';
 import { SettingsController } from '../controller';
+import { PaperController } from '../controller';
 import { TradingViewController } from '../controller/tradingview_controller';
+
+// Paper trading
+import { PaperRepository } from '../repository';
+import { PaperTradingService } from '../paper/paper_service';
 
 // V2 Strategies
 import { DcaDipper } from '../strategy/strategies/dca_dipper/dca_dipper';
@@ -146,6 +150,8 @@ let botRunner: BotRunner;
 let exchangeInstanceService: ExchangeInstanceService;
 let binancePriceService: BinancePriceService;
 let profileOrderService: ProfileOrderService;
+let paperRepository: PaperRepository;
+let paperTradingService: PaperTradingService;
 
 const parameters: Parameters = {
   projectDir: ''
@@ -203,6 +209,9 @@ export interface Services {
   getBotRunner(): BotRunner;
   getBinancePriceService(): BinancePriceService;
   getProfileOrderService(): ProfileOrderService;
+  getPaperRepository(): PaperRepository;
+  getPaperService(): PaperTradingService;
+  getPaperController(templateHelpers: any): PaperController;
 }
 
 const services: Services = {
@@ -218,16 +227,15 @@ const services: Services = {
     }
 
     const dbPath = path.join(parameters.projectDir, 'var', 'bot.db');
-    const dbExists = fs.existsSync(dbPath);
 
     const myDb = new Sqlite(dbPath);
     myDb.pragma('journal_mode = WAL');
     myDb.pragma('SYNCHRONOUS = 1;');
     myDb.pragma('LOCKING_MODE = EXCLUSIVE;');
 
-    if (!dbExists) {
-      myDb.exec(DATABASE_SCHEMA);
-    }
+    // Schema is idempotent (IF NOT EXISTS) so it is safe to apply on every boot,
+    // which also creates any newly added tables on existing databases.
+    myDb.exec(DATABASE_SCHEMA);
 
     return (db = myDb);
   },
@@ -610,7 +618,8 @@ const services: Services = {
       this.getStrategyExecutor(),
       this.getNotifier(),
       this.getSignalRepository(),
-      this.getLogger()
+      this.getLogger(),
+      this.getPaperService()
     ));
   },
 
@@ -628,6 +637,26 @@ const services: Services = {
     }
 
     return (profileOrderService = new ProfileOrderService(this.getLogger()));
+  },
+
+  getPaperRepository: function (): PaperRepository {
+    if (paperRepository) {
+      return paperRepository;
+    }
+
+    return (paperRepository = new PaperRepository(this.getDatabase()));
+  },
+
+  getPaperService: function (): PaperTradingService {
+    if (paperTradingService) {
+      return paperTradingService;
+    }
+
+    return (paperTradingService = new PaperTradingService(this.getPaperRepository(), this.getProfileService(), this.getLogger()));
+  },
+
+  getPaperController: function (templateHelpers: any): PaperController {
+    return new PaperController(templateHelpers, this.getPaperService(), this.getProfileService());
   }
 };
 

@@ -3,6 +3,7 @@ import { Logger } from '../modules/services';
 import { SignalRepository } from '../repository';
 import { ProfileService } from '../profile/profile_service';
 import { StrategyExecutor } from '../modules/strategy/v2/typed_backtest';
+import { PaperTradingService } from '../paper/paper_service';
 import type { Bot, Profile } from '../profile/types';
 
 /** Convert a period string (e.g. "15m", "4h", "1d") to whole minutes. */
@@ -37,7 +38,8 @@ export class BotRunner {
     private readonly strategyExecutor: StrategyExecutor,
     private readonly notifier: Notify,
     private readonly signalRepository: SignalRepository,
-    private readonly logger: Logger
+    private readonly logger: Logger,
+    private readonly paperTradingService: PaperTradingService
   ) {}
 
   /**
@@ -121,9 +123,18 @@ export class BotRunner {
 
     this.logger.info(`BotRunner: signal "${signal}" ${profile.exchange}:${bot.pair} via "${bot.strategy}"`);
 
-    if (!isWatchOnly) {
-      await this.executeSignal(bot, profile, signal);
+    if (isWatchOnly) {
+      return;
     }
+
+    if (bot.mode === 'paper') {
+      const price = marketData.last ?? marketData.ask;
+      this.paperTradingService.executeSignal(profile.id, profile.exchange, bot.pair, signal, bot.capital, price, profile.paperBalance);
+      this.logger.info(`BotRunner: paper "${signal}" ${profile.exchange}:${bot.pair} @ ${price}`);
+      return;
+    }
+
+    await this.executeSignal(bot, profile, signal);
   }
 
   /**

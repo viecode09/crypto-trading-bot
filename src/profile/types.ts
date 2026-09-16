@@ -4,6 +4,7 @@ export interface Profile {
   exchange: string;
   apiKey?: string;
   secret?: string;
+  paperBalance?: number;
   bots?: Bot[];
 }
 
@@ -81,7 +82,7 @@ export interface PositionInfo {
 }
 
 // Bot-related types
-export type BotMode = 'watch' | 'trade';
+export type BotMode = 'watch' | 'trade' | 'paper';
 export type BotStatus = 'stopped' | 'running';
 
 export interface Bot {

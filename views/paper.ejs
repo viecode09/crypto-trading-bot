@@ -1,0 +1,144 @@
+<!-- Content -->
+<div class="p-4">
+    <div class="max-w-[1800px] mx-auto">
+        <div class="flex items-center justify-between mb-4">
+            <h1 class="text-2xl font-semibold">Paper Trading</h1>
+            <nav class="text-sm text-gray-500">
+                <a href="/" class="text-blue-600 hover:underline">Dashboard</a> / Paper
+            </nav>
+        </div>
+
+        <% if (profiles.length === 0) { %>
+        <div class="bg-white border border-gray-200 rounded p-6 text-center text-gray-400">
+            No paper accounts yet. Create a bot with mode <span class="font-mono">Paper</span> on a profile to start simulated trading.
+        </div>
+        <% } else { %>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div class="bg-white border border-gray-200 rounded p-4">
+                <div class="text-xs uppercase text-gray-500 mb-1">Total Equity (<%= accounts[0] ? accounts[0].account.quoteCurrency : 'USDT' %>)</div>
+                <div class="text-2xl font-semibold"><%= priceFormat(totalEquity) %></div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded p-4">
+                <div class="text-xs uppercase text-gray-500 mb-1">Avg Return</div>
+                <div class="text-2xl font-semibold <%= totalReturn >= 0 ? 'text-green-600' : 'text-red-600' %>">
+                    <%= totalReturn >= 0 ? '+' : '' %><%= totalReturn.toFixed(2) %>%
+                </div>
+            </div>
+            <div class="bg-white border border-gray-200 rounded p-4">
+                <div class="text-xs uppercase text-gray-500 mb-1">Accounts</div>
+                <div class="text-2xl font-semibold"><%= accounts.length %></div>
+            </div>
+        </div>
+
+        <% accounts.forEach(function(view) { %>
+        <% var profile = profiles.find(function(p) { return p.id === view.account.profileId; }); %>
+        <div class="bg-white border border-gray-200 rounded mb-4">
+            <div class="px-4 py-3 border-b border-gray-200 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <span class="font-semibold"><%= profile ? profile.name : view.account.profileId %></span>
+                    <span class="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-600"><%= view.account.exchange %></span>
+                    <span class="text-xs text-gray-400 font-mono"><%= view.account.profileId %></span>
+                </div>
+                <form method="post" action="/paper/<%= view.account.profileId %>/reset" onsubmit="return confirm('Reset paper account and clear trade history?')">
+                    <button type="submit" class="text-xs px-3 py-1 rounded bg-red-100 text-red-800 hover:bg-red-200">
+                        <i class="fas fa-rotate-left mr-1"></i> Reset
+                    </button>
+                </form>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-px bg-gray-200 border-b border-gray-200 text-[13px]">
+                <div class="bg-white px-4 py-2">
+                    <div class="text-xs text-gray-500">Initial</div>
+                    <div class="font-mono"><%= priceFormat(view.account.initialBalance) %></div>
+                </div>
+                <div class="bg-white px-4 py-2">
+                    <div class="text-xs text-gray-500">Cash</div>
+                    <div class="font-mono"><%= priceFormat(view.account.cash) %></div>
+                </div>
+                <div class="bg-white px-4 py-2">
+                    <div class="text-xs text-gray-500">Equity</div>
+                    <div class="font-mono"><%= priceFormat(view.equity) %></div>
+                </div>
+                <div class="bg-white px-4 py-2">
+                    <div class="text-xs text-gray-500">Unrealized</div>
+                    <div class="font-mono <%= view.unrealizedPnl >= 0 ? 'text-green-600' : 'text-red-600' %>"><%= priceFormat(view.unrealizedPnl) %></div>
+                </div>
+                <div class="bg-white px-4 py-2">
+                    <div class="text-xs text-gray-500">Return</div>
+                    <div class="font-mono <%= view.returnPercent >= 0 ? 'text-green-600' : 'text-red-600' %>">
+                        <%= view.returnPercent >= 0 ? '+' : '' %><%= view.returnPercent.toFixed(2) %>%
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse text-[13px]">
+                    <thead>
+                    <tr>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-left">Pair</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-left">Side</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Amount</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Entry</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Mark</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Unreal. PnL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% if (view.positions.length === 0) { %>
+                    <tr><td colspan="6" class="px-3 py-4 text-center text-gray-400">No open positions</td></tr>
+                    <% } %>
+                    <% view.positions.forEach(function(position) { %>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono"><%= position.pair %></td>
+                        <td class="border-b border-gray-100 px-3 py-2">
+                            <span class="px-2 py-0.5 rounded text-xs <%= position.side === 'long' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>"><%= position.side %></span>
+                        </td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right"><%= priceFormat(position.amount) %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right"><%= priceFormat(position.entryPrice) %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right"><%= priceFormat(position.markPrice) %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right <%= position.unrealizedPnl >= 0 ? 'text-green-600' : 'text-red-600' %>">
+                            <%= priceFormat(position.unrealizedPnl) %>
+                            <span class="text-[11px] opacity-75">(<%= position.unrealizedPnlPercent.toFixed(2) %>%)</span>
+                        </td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+
+            <% if (view.trades.length > 0) { %>
+            <div class="border-t border-gray-200 px-4 py-2 text-xs uppercase text-gray-500">Recent Simulated Trades</div>
+            <div class="overflow-x-auto">
+                <table class="w-full border-collapse text-[13px]">
+                    <thead>
+                    <tr>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-left">Time</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-left">Pair</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-left">Side</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Amount</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">Price</th>
+                        <th class="border-b border-gray-200 bg-gray-50 font-semibold px-3 py-2 text-right">PnL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% view.trades.slice(0, 20).forEach(function(trade) { %>
+                    <tr class="hover:bg-gray-100">
+                        <td class="border-b border-gray-100 px-3 py-2 text-gray-500"><%= formatDate(trade.createdAt * 1000, 'Y-m-d H:i') %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono"><%= trade.pair %></td>
+                        <td class="border-b border-gray-100 px-3 py-2"><%= trade.side %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right"><%= priceFormat(trade.amount) %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right"><%= priceFormat(trade.price) %></td>
+                        <td class="border-b border-gray-100 px-3 py-2 font-mono text-right <%= trade.pnl >= 0 ? 'text-green-600' : 'text-red-600' %>">
+                            <%= trade.pnl ? priceFormat(trade.pnl) : '-' %>
+                        </td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% } %>
+        </div>
+        <% }); %>
+        <% } %>
+    </div>
+</div>

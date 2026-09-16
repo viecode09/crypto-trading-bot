@@ -83,4 +83,37 @@ CREATE TABLE IF NOT EXISTS logs (
 CREATE INDEX IF NOT EXISTS created_at_idx ON logs (created_at);
 CREATE INDEX IF NOT EXISTS level_created_at_idx ON logs (level, created_at);
 CREATE INDEX IF NOT EXISTS level_idx ON logs (level);
+
+CREATE TABLE IF NOT EXISTS paper_accounts (
+  profile_id       VARCHAR(64)  PRIMARY KEY,
+  exchange         VARCHAR(255) NULL,
+  quote_currency   VARCHAR(32)  NULL,
+  initial_balance  REAL         NULL,
+  cash             REAL         NULL,
+  created_at       INTEGER      NULL
+);
+
+CREATE TABLE IF NOT EXISTS paper_positions (
+  profile_id   VARCHAR(64)  NOT NULL,
+  pair         VARCHAR(255) NOT NULL,
+  side         VARCHAR(16)  NULL,
+  amount       REAL         NULL,
+  entry_price  REAL         NULL,
+  opened_at    INTEGER      NULL,
+  PRIMARY KEY (profile_id, pair)
+);
+
+CREATE TABLE IF NOT EXISTS paper_trades (
+  id           INTEGER PRIMARY KEY AUTOINCREMENT,
+  profile_id   VARCHAR(64)  NULL,
+  pair         VARCHAR(255) NULL,
+  side         VARCHAR(16)  NULL,
+  amount       REAL         NULL,
+  price        REAL         NULL,
+  quote_amount REAL         NULL,
+  pnl          REAL         NULL,
+  created_at   INTEGER      NULL
+);
+
+CREATE INDEX IF NOT EXISTS paper_trades_profile_idx ON paper_trades (profile_id, created_at);
 `;

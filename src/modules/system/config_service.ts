@@ -23,6 +23,7 @@ export interface Profile {
   exchange: string;
   apiKey?: string;
   secret?: string;
+  paperBalance?: number;
   bots?: Bot[];
 }
 
@@ -33,7 +34,7 @@ export interface Bot {
   pair: string;
   interval: string;
   capital: number;
-  mode: 'watch' | 'trade';
+  mode: 'watch' | 'trade' | 'paper';
   status: 'stopped' | 'running';
   options?: Record<string, any>;
 }
