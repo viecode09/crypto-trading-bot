@@ -4,6 +4,7 @@ import { DashboardConfigService } from './dashboard_config_service';
 import { ExchangeCandlestick } from '../../dict/exchange_candlestick';
 import { Logger } from '../services';
 import { ProfileService } from '../../profile/profile_service';
+import { applyProxyToExchange } from '../../utils/proxy';
 
 type SymbolType = 'spot' | 'swap' | 'futures';
 
@@ -181,6 +182,12 @@ export class CcxtCandleWatchService {
     }
 
     const instance: any = new ExchangeClass({ newUpdates: true });
+
+    try {
+      await applyProxyToExchange(instance as ccxt.Exchange);
+    } catch (e: any) {
+      this.logger.error(`[CcxtCandleWatch] Proxy setup failed for ${exchangeId}: ${e.message || String(e)}`);
+    }
 
     while (gen === this.generation) {
       try {

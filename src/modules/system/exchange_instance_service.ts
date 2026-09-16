@@ -1,5 +1,6 @@
 import * as ccxt from 'ccxt';
 import { Profile } from '../../profile/types';
+import { applyProxyToExchange, getProxyUrl } from '../../utils/proxy';
 
 const TTL_MS = 60 * 60 * 1000; // 1 hour
 
@@ -18,6 +19,7 @@ interface CachedExchange {
 export class ExchangeInstanceService {
   private publicInstances = new Map<string, CachedExchange>();
   private authedInstances = new Map<string, CachedExchange>();
+  private readonly proxyUrl = getProxyUrl();
 
   /**
    * Returns a cached public (unauthenticated) exchange instance with markets already loaded.
@@ -35,6 +37,7 @@ export class ExchangeInstanceService {
     }
 
     const exchange: ccxt.Exchange = new ExchangeClass({ enableRateLimit: true });
+    await applyProxyToExchange(exchange, this.proxyUrl);
     await exchange.loadMarkets();
 
     this.publicInstances.set(exchangeName, {
@@ -66,6 +69,7 @@ export class ExchangeInstanceService {
       enableRateLimit: true
     });
 
+    await applyProxyToExchange(exchange, this.proxyUrl);
     await exchange.loadMarkets();
 
     this.authedInstances.set(profile.id, {
